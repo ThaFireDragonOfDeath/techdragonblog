@@ -16,7 +16,7 @@ Allgemeine Informationen zu Bitmessage
 - Eine Bitmessage Adresse deaktivieren
 - Eine Bitmessage Adresse reaktivieren
 - Eine Bitmessage Adresse löschen
-Eine Bitmessage-Adresse als öffentliche Mailingliste nutzen
+- Eine Bitmessage-Adresse als öffentliche Mailingliste nutzen
 Einen Chanel erstellen
 Einen Chanel beitreten
 Einen Chanel austreten
@@ -42,7 +42,7 @@ Schlusswort
 Die <a href="https://de.wikipedia.org/wiki/E-Mail" target="_blank">E-Mail</a> ist eine grandiose Technik, welche so gut wie überall eingesetzt wird, vor allem, da sie eine einfache asynchrone Kommunikationsmöglichkeit darstellt. Die E-Mail hat aber ein Grundsätzliches Problem: Die E-Mail ist von Grund auf unsicher (<a href="http://www.althammer-it.de/aktuelles/nachrichten/66-e-mail-bequem-und-absolut-unsicher" target="_blank">Quelle 1</a>, <a href="http://www.sewecom.de/zentrale-themen/gefaehrliches-halbwissen/" target="_blank">Quelle 2</a>). Die De-Mail ist im übrigen auch nicht viel sicherer (<a href="http://www.chip.de/news/PR-Panne-So-unsicher-ist-E-Mail-made-in-Germany_63826400.html" target="_blank">Quelle</a>). Bei beiden Systemen liegen die E-Mails (Metadaten und Inhalt) unverschlüsselt auf den Servern der Anbieter, was den Geheimdiensten wie der NSA (<a href="http://www.zeit.de/digital/datenschutz/2013-10/nsa-ueberwachung-email-kontakte" target="_blank">Quelle</a>) und den BND (<a href="http://www.welt.de/politik/deutschland/article115051936/BND-hat-Millionen-Mails-und-SMS-mitgelesen.html" target="_blank">Quelle</a>) sehr gelegen kommt. Nach den Enthüllungen durch Edward Snowden stieg die Nutzung von <a href="https://de.wikipedia.org/wiki/GNU_Privacy_Guard" target="_blank">GPG</a> (<a href="https://de.wikipedia.org/wiki/Pretty_Good_Privacy" target="_blank">OpenPGP</a>) stark an (<a href="www.zdnet.de/88185391/snowden-effekt/" target="_blank">Quelle</a>). Dadurch konnte nun sichergestellt werden, dass die E-Mail nicht mehr von unbefugten Personen gelesen werden konnten. Der Inhalt war verschlüsselt. Die Metadaten (Sender, Empfänger und Betreff) ließen sich damit jedoch nicht Verschlüsseln. Nur den Inhalt zu verschlüsseln reicht aber nicht. Die Metadaten reichen schon um tief in das Leben des Nutzers einzudringen (<a href="http://www.itespresso.de/2013/07/09/immersion-so-viel-verraten-metadaten-uber-mail-nutzer/" target="_blank">Quelle</a>). Die Lösung ist ein Protokoll, welches ohne Metadaten auskommt. Die Lösung lautet <a href="https://de.wikipedia.org/wiki/Bitmessage" target="_blank">Bitmessage</a>.
 
 <strong>Funktionsweise von Bitmessage:</strong>
-Bitmessage funktioniert im Gegensatz zur E-Mail völlig dezentral. Der Bitmessage-Client verbindet sich beim Start mit einem von 10 fest einprogrammierten Adressen (Quelle: <a href="https://github.com/Bitmessage/PyBitmessage/blob/master/src/defaultKnownNodes.py" target="_blank">defaultKnownNodes.py</a> Zeile 14-24) um sich eine Liste mit verfügbaren Gegenstellen, welche ebenfalls Bitmessage laufen haben. 
+Bitmessage funktioniert im Gegensatz zur E-Mail völlig dezentral. Der Bitmessage-Client verbindet sich beim Start mit einem von 10 fest einprogrammierten Adressen (Quelle: <a href="https://github.com/Bitmessage/PyBitmessage/blob/master/src/defaultKnownNodes.py" target="_blank">defaultKnownNodes.py</a> Zeile 14-24) um sich eine Liste mit verfügbaren Gegenstellen, welche ebenfalls Bitmessage laufen haben.
 
 <strong>Vorteile von Bitmessage:</strong>
 + Bitmessage funktioniert über <a href="http://www.itwissen.info/definition/lexikon/Peer-to-Peer-Netz-P2P-peer-to-peer-network.html" target="_blank">P2P</a> und benötigt daher, bis auf beim Erststart, keinen zentralen Server, wodurch ein Ausfall sehr unwahrscheinlich ist.
@@ -120,8 +120,8 @@ Tab Resends Expire:
 - Hier können Sie einstellen, wie lange noch versucht werden soll, die Nachricht an dem Empfänger erneut zuzustellen, falls dieser über eine längere Zeit offline sein sollte.
 
 <strong>Erzeugung einer neuen Bitmessage-Adresse:</strong>
-Um eine neue Bitmessage Identität zu erzeugen, navigieren Sie zum Tab "Ihre Identitäten" und klicken Sie anschließend auf "Neu": 
-<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-07.png"><img src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-07-300x207.png" alt="Screenshot-Bitmessage-07" width="300" height="207" class="alignnone size-medium wp-image-381" /></a>
+Um eine neue Bitmessage Identität zu erzeugen, navigieren Sie zum Tab "Ihre Identitäten" und klicken Sie anschließend auf "Neu":
+<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-07.png"><img class="alignnone size-medium wp-image-381" src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-07-300x207.png" alt="Screenshot-Bitmessage-07" width="300" height="207" /></a>
 
 Nun müssen Sie auswählen, ob Sie ihre Bitmessage-Adresse anhand des Zufalls-Generators erstellen wollen, oder ob Sie ein Passwort nehmen wollen nach dem die Adresse erzeugt werden soll. Die Erzeugung über ein Passwort hat den Vorteil, dass Sie Ihre Adresse im Notfall wiederherstellen können, falls Sie die keys.dat unwiederbringlich verloren haben. Außerdem sind Sie dann nicht von dem Zufalls-Generator abhängig, was die Sicherheit steigert. Allerdings müssen Sie ein sehr starkes Passwort verwenden, da ihre Identität ansonsten leicht repliziert werden kann. Falls Sie diese Methode verwenden sollten empfehle ich Ihnen ein Passwort mit mindestens 70 (je mehr, desto besser) zufälligen Stellen mit Zahlen, Buchstaben (groß und klein) und Sonderzeichnen. Freilich ist es kaum möglich sich solch ein kompliziertes Passwort zu merken. Deshalb sollten Sie es sicher abspeichern. Wie so etwas geht habe ich in einem anderen Beitrag zu KeePass schon ausführlich dargelegt. Den Beitrag können Sie hier abrufen: KeePass: <a title="KeePass: Passwörter sicher auf dem Computer abspeichern" href="http://techdragonblog.square7.ch/keepass-passwoerter-sicher-auf-dem-computer-abspeichern/" target="_blank">Passwörter sicher auf dem Computer abspeichern</a>
 
@@ -130,8 +130,8 @@ Nachdem Sie in diesem Dialog auf "Ok" geklickt haben wird die Adresse erzeugt. D
 Ihre neue Identität ist nun im Tab Ihre Identitäten aufgelistet. Durch Doppelklick auf die Bezeichnung der Adresse können Sie diese umbenennen und mit einem Rechtsklick auf die Identität und anschließend auf "Set Avatar" können Sie das Bild vor der Bezeichnung ändern (das Bild sollte eine maximale Auflösung von 300 * 300 Pixel haben und nicht größer als 30 KB sein, da Bitmessage größere Dateien nicht verarbeiten kann). Sowohl die Bezeichnung, als auch der Avatar sind nicht öffentlich sichtbar.
 
 <strong>Backups der Bitmessage-Adressen (und anderen Daten) anfertigen:</strong>
-Es ist immer sinnvoll ein aktuelles Backup, denn es kann immer mal zum Ausfall der Festplatte oder ähnliches kommen. Sofern Sie Ihre Bitmessage über ein Passwort erstellt haben, könnten Sie Ihre Adresse leicht über "Datei" --> "Deterministische Adressen neu generieren" wiederherstellen. Andernfalls ist Ihre Adresse ohne Backup hoffnungslos verloren.
-Die Daten zu sichern ist hingegen deutlich einfacher und erspart viel Zeit und Ärger. Hierfür ist es sinnvoll, dass Sie den Portablen Modus in den Einstellungen aktiviert haben (Sie können dies auch schnell nachträglich erledigen: "Einstellungen" --> "Einstellungen" --> "In portablem Modus arbeiten" --> "Ok"). Denn wenn dieser Modus aktiviert ist, befinden sich alle wichtigen Dateien im gleichen Ordner wie die Bitmessage.exe. Falls Sie nicht im portablem Modus Arbeiten, finden Sie die Dateien in Anwendungsordner (C:\Dokumente und Einstellungen\Benutzername\Anwendungsdaten bzw. C:\Dokumente und Einstellungen\Benutzername\AppData\Roaming) --> PyBitmessage.
+Es ist immer sinnvoll ein aktuelles Backup, denn es kann immer mal zum Ausfall der Festplatte oder ähnliches kommen. Sofern Sie Ihre Bitmessage über ein Passwort erstellt haben, könnten Sie Ihre Adresse leicht über "Datei" --&gt; "Deterministische Adressen neu generieren" wiederherstellen. Andernfalls ist Ihre Adresse ohne Backup hoffnungslos verloren.
+Die Daten zu sichern ist hingegen deutlich einfacher und erspart viel Zeit und Ärger. Hierfür ist es sinnvoll, dass Sie den Portablen Modus in den Einstellungen aktiviert haben (Sie können dies auch schnell nachträglich erledigen: "Einstellungen" --&gt; "Einstellungen" --&gt; "In portablem Modus arbeiten" --&gt; "Ok"). Denn wenn dieser Modus aktiviert ist, befinden sich alle wichtigen Dateien im gleichen Ordner wie die Bitmessage.exe. Falls Sie nicht im portablem Modus Arbeiten, finden Sie die Dateien in Anwendungsordner (C:\Dokumente und Einstellungen\Benutzername\Anwendungsdaten bzw. C:\Dokumente und Einstellungen\Benutzername\AppData\Roaming) --&gt; PyBitmessage.
 Dort finden Sie folgende Dateien:
 Keys.dat: Enthält alle Einstellungen und alle Schlüssel für die Bitmessage Adressen. Diese Datei sollten Sie auf jeden Fall sichern.
 knownnodes.dat: Enthält alle bekannten Rechner im Bitmessage Netzwerk. Diese können Sie optional sichern.
@@ -151,14 +151,18 @@ Eine deaktivierte Adresse können ganz einfach wieder aktivieren:
 <strong>Eine Bitmessage Adresse löschen:</strong>
 Um eine Bitmessage zu löschen, müssen Sie in der keys.dat Datei herum-hantieren, daher sollten Sie die Datei DRINGENDST SICHERN.
 Öffnen Sie die keys.dat mit einem Editor wie zum Beispiel <a href="http://notepad-plus-plus.org/download/v6.7.4.html" target="_blank">Notepad++</a> (die Datei mit dem Windows Editor zu öffnen nicht ratsam, da der Windows Editor aka. Notepad den Inhalt der keys.dat in eine bis zwei Zeilen quetscht, was stark unübersichtlich ist):
-<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-13.png"><img src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-13-300x189.png" alt="Screenshot-Bitmessage-13" width="300" height="189" class="alignnone size-medium wp-image-398" /></a>
+<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-13.png"><img class="alignnone size-medium wp-image-398" src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-13-300x189.png" alt="Screenshot-Bitmessage-13" width="300" height="189" /></a>
 
 Anschließend müssen Sie nur noch die Datei speichert und Bitmessage neu-starten. Anschließend sollten Sie im Tab "Ihre Identitäten" nachschauen, ob alles wie gewünscht funktioniert hat. Falls etwas nicht wie geplant funktioniert hat können Sie einfach die gesicherte keys.dat wieder zurück-spielen.
 
 Löschen Sie nun den Absatz von BM-[...] bis zur Leerzeile. Das sieht dann in meinem Beispiel so aus:
-<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-14.png"><img src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-14-300x189.png" alt="Screenshot-Bitmessage-14" width="300" height="189" class="alignnone size-medium wp-image-399" /></a>
+<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-14.png"><img class="alignnone size-medium wp-image-399" src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-14-300x189.png" alt="Screenshot-Bitmessage-14" width="300" height="189" /></a>
 
 <strong>Eine Bitmessage-Adresse als öffentliche Mailingliste nutzen:</strong>
+Wenn Sie diese Option für eine Adresse aktivieren werden alle Nachrichten, die bei dieser Adresse eintreffen werden automatisch auch an alle geschickt, die diese Adresse abonniert haben.
+Um eine Adresse als Pseudo-Mailingliste zu definieren, öffnen Sie den Tab "Ihre Identitäten".
+Anschließend klicken Sie mit der rechten Maustaste auf die Adresse, die Sie als Mailingliste einstellen wollen, und klicken Sie auf "Spezielles Verhalten der Adresse". Im Folgenden Dialog müssen die Option "Wie eine Pseudo-Mailinglistenadresse verhalten" aktivieren und der Mailingliste einen Namen geben. Dieser wird vor dem Betreff mit eingeschoben. Wenn also jemand beispielsweise eine Nachricht mit dem Betreff "Testbetreff" an einer Mailinglisten Adresse mit dem Namen "Bitmessage-Testmailingliste" sendet, erscheint das bei den Abonnenten im Betreff folgendermaßen: 
+"[Bitmessage-Testmailingliste] Testbetreff". Quelle: <a href="https://bitmessage.org/wiki/Mailing_List" target="_blank">Bitmessage-Wiki</a>.
 
 <strong>Einen Chanel erstellen:</strong>
 
@@ -167,7 +171,7 @@ Löschen Sie nun den Absatz von BM-[...] bis zur Leerzeile. Das sieht dann in me
 <strong>Einen Chanel austreten:</strong>
 
 <strong>Adresse zum Adressbuch hinzufügen:</strong>
-Um eine fremde Adresse zum Adressbuch hinzuzufügen, öffnen Sie den Tab "Adressbuch" und klicken Sie auf "Neuen Eintrag erstellen". Tragen Sie im anschließenden Dialog die Bezeichnung (bsp. Namen des Kontakts) bei Label und die Bitmessage-Adresse ein. 
+Um eine fremde Adresse zum Adressbuch hinzuzufügen, öffnen Sie den Tab "Adressbuch" und klicken Sie auf "Neuen Eintrag erstellen". Tragen Sie im anschließenden Dialog die Bezeichnung (bsp. Namen des Kontakts) bei Label und die Bitmessage-Adresse ein.
 Alternativ können Sie auch eine Adresse hinzufügen, indem Sie im Tab "Posteingang" mit der rechten Maustaste auf eine empfangende Nachricht klicken und anschließend "Absender zum Adressbuch hinzufügen" auswählen.
 Optional können Sie die Adresse noch mit einem Profilbild verknüpfen. Klicken Sie dazu mit der Rechten Maustaste auf die Adresse und anschließend auf "Set Avatar". Das Bild sollte möglichst klein sein (so 100 * 100 bis 300 * 300 reichen völlig).
 
@@ -195,12 +199,12 @@ Falls Sie eine Adresse dauerhaft von der Liste entfernen wollen, öffnen Sie den
 
 <strong>Eine Nachricht an eine Bitmessage Adresse senden:</strong>
 Wählen Sie den Tab "Senden" aus, wählen Sie darauf folgend eine Ihrer Identitäten hinter dem "Von:" aus, tragen Sie nun den Empfänger ein (falls Sie den Empfänger im Adressbuch gespeichert haben, navigieren Sie zu dem Adressbuch Tab, klicken Sie mit der Rechten Maustaste auf den Empfänger und anschließend auf "Nachricht an diese Adresse senden"). Tragen Sie nun den Betreff und die Nachricht ein. Klicken Sie zum Schluss auf "Senden":
-<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-10.png"><img src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-10-300x207.png" alt="Screenshot-Bitmessage-10" width="300" height="207" class="alignnone size-medium wp-image-385" /></a>
+<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-10.png"><img class="alignnone size-medium wp-image-385" src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-10-300x207.png" alt="Screenshot-Bitmessage-10" width="300" height="207" /></a>
 
 Im Tab "Gesendet" können Sie den Status nachverfolgen. Während die Nachricht versendet wird, steigt die Prozessorauslastung für einige Sekunden, eventuell auch Minuten, bis auf 100% an (im Test hat das weniger als eine halbe Minute gedauert). Die Nachricht wurde gesendet wenn im Status Feld steht "Message sent. Waiting for acknowledgement. Sent at [...]". Zu diesem Zeitpunkt wartet Bitmessage noch auf eine Empfangsbestätigung. Wenn dann folgendes steht "Acknowledgement of the message received, [...]" oder "Nachricht gesendet. gesendet am [...]" heißt das die Nachricht empfangen wurde.
 
 Beim Empfänger sieht das im Posteingang dann folgendermaßen aus:
-<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-11.png"><img src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-11-300x213.png" alt="Screenshot-Bitmessage-11" width="300" height="213" class="alignnone size-medium wp-image-386" /></a>
+<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-11.png"><img class="alignnone size-medium wp-image-386" src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-11-300x213.png" alt="Screenshot-Bitmessage-11" width="300" height="213" /></a>
 
 <strong>Eine Rundrufnachricht senden:</strong>
 Um eine Rundruf-Nachricht zu versenden, verfahren Sie wie beim Senden einer Person zu Person Nachricht, nur dass Sie dieses mal die Option "Rundruf an jeden, der Ihre Adresse abonniert hat" auswählen. Nach dem Sie die Nachricht abgeschickt haben, wird die dafür notwendige Arbeit verrichtet. Dies kann mehrere Minuten in Anspruch nehmen.
@@ -214,7 +218,7 @@ Um eine Rundruf-Nachricht zu versenden, verfahren Sie wie beim Senden einer Pers
 <strong>Eine Bitmessage Nachricht in den Papierkorb verschieben:</strong>
 
 <strong>Zusammenfassendes Video von SemperVideo:</strong>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xVfpSaPphE0" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/xVfpSaPphE0" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 <strong>Weiterführende Materialien und Quellen:</strong>
 <a href="https://bitmessage.org/wiki/Developer_Reference" target="_blank">Bitmessage Developer Reference</a> (Funktionsweise, Liste mit bekannten Implementierungen, Webmailern, E-Mail Gateways)
