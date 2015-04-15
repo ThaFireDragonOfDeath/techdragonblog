@@ -2,7 +2,7 @@
 
 <strong>Inhalt dieses Beitrages:</strong>
 - Einleitung
--Allgemeine Informationen zu (Py)Bitmessage
+- Allgemeine Informationen zu (Py)Bitmessage
 -Ausführliche Funktionsweise von Bitmessage
 - Vorteile von Bitmessage
 - Nachteile von Bitmessage
@@ -14,9 +14,10 @@
 - Eine Bitmessage Adresse deaktivieren
 - Eine Bitmessage Adresse reaktivieren
 - Eine Bitmessage Adresse löschen
-- Eine Bitmessage-Adresse als öffentliche Mailingliste nutzen
-Einen Chanel erstellen
+- Eine Bitmessage-Adresse als öffentliche Pseudo-Mailingliste nutzen
+-Einen Chanel erstellen
 Einen Chanel beitreten
+Eine Nachricht an die Mitglieder des Chanels senden
 Einen Chanel austreten
 - Adresse zum Adressbuch hinzufügen
 - Adresse aus dem Adressbuch entfernen
@@ -41,7 +42,13 @@ Die <a href="https://de.wikipedia.org/wiki/E-Mail" target="_blank">E-Mail</a> is
 
 <strong>Allgemeine Informationen zu (Py)Bitmessage:</strong>
 Betriebssystem: Linux, Windows, OSX
+Programmiert in: Python 2.7
 Sprachen: Multi13 (darunter auch Deutsch, Englisch und Pirate English)
+GUI: PyQT
+Aktuelle Version (zum Zeitpunkt des Schreibens): 0.4.4
+Größe der EXE Datei: 14,7 MB
+Formate der Setup Datei: .exe; git: .py (direkter Sourcecode)
+Quellcode: Auf GitHub: <a href="https://github.com/Bitmessage/PyBitmessage" target="_blank">https://github.com/Bitmessage/PyBitmessage</a>
 
 <strong>Ausführliche Funktionsweise von Bitmessage:</strong>
 Beim Start:
@@ -72,7 +79,7 @@ Bei jeder neuen Empfangenden Botschaft versucht der Bitmessage Client, die Nachr
 
 <strong>Nachteile von Bitmessage:</strong>
 - Es ist für das Bitmessage Protokoll noch keine ausgereifte Android oder IOS App verfügbar. Für Android existiert eine Möglichkeit mittels eines Bitmessage Servers (kann man auch auf dem eigenen PC hosten) und der Android App <a href="https://github.com/JonathanCoe/bitseal" target="_blank">Bitseal</a> seine Bitmessage Nachrichten zu verwalten. Bitseal ist aber noch keineswegs ausgereift und ist nicht im direktem Sinne ein Bitmessage Client, da Bitseal auf einem laufenden Bitseal-Server angewiesen ist. In meinem Test (getestete Version: 0.5.4) kam eine Nachricht, die ich von Bitseal an meine Adresse geschickt habe sogar gleich zweimal an (Bitseal wartete aber immer noch auf eine Bestätigung), aber eine Nachricht von meiner Adresse an Bitseal funktionierte leider nicht
-- Bitmessage wurde noch nicht von Experten auf Schwachstellen untersucht. Daher wäre es ratsam Bitmessage in Kombination mit GPG zu nutzen.
+- Bitmessage wurde noch nicht von Experten auf Schwachstellen untersucht. Daher wäre es ratsam Bitmessage in Kombination mit GPG zu nutzen. Es existiert aber schon eine (in englisch verfasste) <a href="https://bitmessage.org/forum/index.php?topic=1666.0" target="_blank">Sicherheitsanalyse mit Diskussion im Bitmessage Forum</a>
 - PyBitmessage ist derzeit noch nicht ausgereift (löschen von alten ID's nicht möglich, Papierkorb kann nur umständlich mit einem SQLite Datenbanktool wie <a href="http://wiki.ubuntuusers.de/SQLite_Database_Browser" target="_blank">SQLite Database Browser</a> oder <a href="https://addons.mozilla.org/de/firefox/addon/sqlite-manager/" target="_blank">SQLite Manager (Firefox Addon)</a> eingesehen werden).
 - Eine gesendete Nachricht hält sich im Bitmessage P2P nur 2 Tage lang. PyBitmessage ist aber so konzipiert, dass die Nachricht für einen vom Nutzer definierten Zeitraum erneut versendet wird bis die Nachricht angekommen beim Nutzer ist oder der Zeitraum abgelaufen ist. Sender und Empfänger müssen also mindestens im Abstand von 2 Tagen Bitmessage gestartet haben.
 - Bitmessage findet zurzeit, im Gegensatz zur klassischen E-Mail, kaum Verbreitung.
@@ -168,15 +175,19 @@ Anschließend müssen Sie nur noch die Datei speichert und Bitmessage neu-starte
 Löschen Sie nun den Absatz von BM-[...] bis zur Leerzeile. Das sieht dann in meinem Beispiel so aus:
 <a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-14.png"><img class="alignnone size-medium wp-image-399" src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-14-300x189.png" alt="Screenshot-Bitmessage-14" width="300" height="189" /></a>
 
-<strong>Eine Bitmessage-Adresse als öffentliche Mailingliste nutzen:</strong>
+<strong>Eine Bitmessage-Adresse als öffentliche Pseudo-Mailingliste nutzen:</strong>
 Wenn Sie diese Option für eine Adresse aktivieren werden alle Nachrichten, die bei dieser Adresse eintreffen werden automatisch auch an alle geschickt, die diese Adresse abonniert haben.
 Um eine Adresse als Pseudo-Mailingliste zu definieren, öffnen Sie den Tab "Ihre Identitäten".
 Anschließend klicken Sie mit der rechten Maustaste auf die Adresse, die Sie als Mailingliste einstellen wollen, und klicken Sie auf "Spezielles Verhalten der Adresse". Im Folgenden Dialog müssen die Option "Wie eine Pseudo-Mailinglistenadresse verhalten" aktivieren und der Mailingliste einen Namen geben. Dieser wird vor dem Betreff mit eingeschoben. Wenn also jemand beispielsweise eine Nachricht mit dem Betreff "Testbetreff" an einer Mailinglisten Adresse mit dem Namen "Bitmessage-Testmailingliste" sendet, erscheint das bei den Abonnenten im Betreff folgendermaßen: 
 "[Bitmessage-Testmailingliste] Testbetreff". Quelle: <a href="https://bitmessage.org/wiki/Mailing_List" target="_blank">Bitmessage-Wiki</a>.
 
 <strong>Einen Chanel erstellen:</strong>
+Ein Chanel ist im Prinzip eine dezentrale Mailingliste mit dem Vorteil bzw. auch Nachteil (je nach Situation), dass diese nicht moderierbar ist. Im Gegensatz zur Pseudo-Mailingliste benötigt man zum Beitreten zusätzlich das Passwort, was hier der nicht öffentliche Name ist, welcher beim Erstellen vergeben wird.
+Um einen neuen Chanel zu erstellen klicken Sie links oben auf "Datei" und anschließend auf "Chan beitreten / erstellen". Wählen Sie als nächstes die Option "Neuen Chan erstellen" an und tragen Sie den Namen für den Chanel ein. Dieser sollte möglichst einzigartig wie ein Passwort sein. Außerdem ist dabei zu beachten, dass wenn dieser Name schon einmal vorkommt, der neue Chanel mit dem alten zusammengeführt wird. Nachdem Sie den Chanel erzeugt haben ist dieser nun im Tab "Ihre Identitäten" aufgelistet.
 
 <strong>Einen Chanel beitreten:</strong>
+
+<strong>Eine Nachricht an die Mitglieder des Chanels senden:</strong>
 
 <strong>Einen Chanel austreten:</strong>
 
