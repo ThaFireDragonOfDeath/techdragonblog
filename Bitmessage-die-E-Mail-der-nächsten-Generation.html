@@ -29,8 +29,8 @@ Dienste in Verbindung mit Bitmessage
 - Eine Bitmessage Adresse von der Blacklist/Whitelist löschen
 - Eine Nachricht an eine Bitmessage Adresse senden
 - Eine Rundrufnachricht senden
-Eine Bitmessage Nachricht lesen
-Auf eine Bitmessage Nachricht antworten
+- Eine Bitmessage Nachricht lesen
+- Auf eine Bitmessage Nachricht antworten
 Eine Bitmessage Nachricht abspeichern
 - Eine Bitmessage Nachricht in den Papierkorb verschieben
 Eine Bitmessage Nachricht aus dem Papierkorb wiederherstellen
@@ -51,6 +51,7 @@ GUI: PyQT
 Aktuelle Version (zum Zeitpunkt des Schreibens): 0.4.4
 Größe der EXE Datei: 14,7 MB
 Formate der Setup Datei: .exe; git: .py (direkter Sourcecode)
+Lizenz: <a href="https://de.wikipedia.org/wiki/MIT-Lizenz" target="_blank">MIT-Lizenz</a>
 Quellcode: Auf GitHub: <a href="https://github.com/Bitmessage/PyBitmessage" target="_blank">https://github.com/Bitmessage/PyBitmessage</a>
 
 <strong>Ausführliche Funktionsweise von Bitmessage:</strong>
@@ -84,7 +85,7 @@ Bei jeder neuen Empfangenden Botschaft versucht der Bitmessage Client, die Nachr
 - Es ist für das Bitmessage Protokoll noch keine ausgereifte Android oder IOS App verfügbar. Für Android existiert eine Möglichkeit mittels eines Bitmessage Servers (kann man auch auf dem eigenen PC hosten) und der Android App <a href="https://github.com/JonathanCoe/bitseal" target="_blank">Bitseal</a> seine Bitmessage Nachrichten zu verwalten. Bitseal ist aber noch keineswegs ausgereift und ist nicht im direktem Sinne ein Bitmessage Client, da Bitseal auf einem laufenden Bitseal-Server angewiesen ist. In meinem Test (getestete Version: 0.5.4) kam eine Nachricht, die ich von Bitseal an meine Adresse geschickt habe sogar gleich zweimal an (Bitseal wartete aber immer noch auf eine Bestätigung), aber eine Nachricht von meiner Adresse an Bitseal funktionierte leider nicht
 - Bitmessage wurde noch nicht von Experten auf Schwachstellen untersucht. Daher wäre es ratsam Bitmessage in Kombination mit GPG zu nutzen. Es existiert aber schon eine (in englisch verfasste) <a href="https://bitmessage.org/forum/index.php?topic=1666.0" target="_blank">Sicherheitsanalyse mit Diskussion im Bitmessage Forum</a>
 - PyBitmessage ist derzeit noch nicht ausgereift (löschen von alten ID's nicht möglich, Papierkorb kann nur umständlich mit einem SQLite Datenbanktool wie <a href="http://wiki.ubuntuusers.de/SQLite_Database_Browser" target="_blank">SQLite Database Browser</a> oder <a href="https://addons.mozilla.org/de/firefox/addon/sqlite-manager/" target="_blank">SQLite Manager (Firefox Addon)</a> eingesehen werden).
-- Eine gesendete Nachricht hält sich im Bitmessage P2P nur 2 Tage lang. PyBitmessage ist aber so konzipiert, dass die Nachricht für einen vom Nutzer definierten Zeitraum erneut versendet wird bis die Nachricht angekommen beim Nutzer ist oder der Zeitraum abgelaufen ist. Sender und Empfänger müssen also mindestens im Abstand von 2 Tagen Bitmessage gestartet haben.
+- Eine gesendete Nachricht hält sich im Bitmessage P2P nur 2 Tage lang. PyBitmessage ist aber so konzipiert, dass die Nachricht für einen vom Nutzer definierten Zeitraum erneut versendet wird bis die Nachricht angekommen beim Nutzer ist oder der Zeitraum abgelaufen ist. Sender und Empfänger müssen also mindestens im Abstand von 2 Tagen Bitmessage gestartet haben. Update: In der Git Version ist es aber schon möglich zu bestimmen, wie lange sich die Nachrichten im Bitmessage Netzwerk halten sollen. Die mögliche Zeitspanne geht von einer Stunde bis 28 Tage (<a href="https://github.com/Bitmessage/PyBitmessage/pull/787" target="_blank">Quelle</a>). In der Windows Version (0.4.4) ist diese Funktion aber noch nicht vorhanden.
 - Bitmessage findet zurzeit, im Gegensatz zur klassischen E-Mail, kaum Verbreitung.
 - Es sind bis jetzt kaum Webmailer vorhanden, welche das Bitmessage Protokoll unterstützen. Mir bekannte Bitmessage Webmailer: <a href="https://bitmessage.ch/" target="_blank">Bitmessage.ch</a>; <a href="https://blinked.ca/" target="_blank">Blinked</a> und <a href="https://bitmsg.me/" target="_blank">Bitmsg</a>.
 - Bisher ist es nur umständlich mittels <a href="https://bitmessage.org/forum/index.php?topic=3327.0" target="_blank">BinSend</a> möglich, Anhänge zu versenden. Eine Implementierung von Anhängen ist aber bereits <a href="https://github.com/Bitmessage/PyBitmessage/pull/658#issuecomment-43558682" target="_blank">geplant</a>.
@@ -239,8 +240,10 @@ Beim Empfänger sieht das im Posteingang dann folgendermaßen aus:
 Um eine Rundruf-Nachricht zu versenden, verfahren Sie wie beim Senden einer Person zu Person Nachricht, nur dass Sie dieses mal die Option "Rundruf an jeden, der Ihre Adresse abonniert hat" auswählen. Nach dem Sie die Nachricht abgeschickt haben, wird die dafür notwendige Arbeit verrichtet. Dies kann mehrere Minuten in Anspruch nehmen.
 
 <strong>Eine Bitmessage Nachricht lesen:</strong>
+Wenn eine neue Nachricht für Sie eintrifft werden Sie auch darüber über die Windows Benachrichtigung informiert. Um diese zu lesen müssen Sie nur das Bitmessage Fenster öffnen und den Tab "Posteingang" öffnen. Hier müssen Sie die Nachricht, die Sie lesen wollen anwählen. Diese wird dann im unteren Teil des Fensters angezeigt.
 
 <strong>Auf eine Bitmessage Nachricht antworten:</strong>
+Klicken Sie mit der rechten Maustaste im Tab "Posteingang" auf die Nachricht, auf die Sie antworten wollen und anschließend auf "Antworten". Nun befinden Sie sich im Tab "Senden", wo die Adresse des Empfängers und eine Kopie der ursprünglichen Nachricht bereits eingefügt wurden. Hier müssen Sie nur noch Ihre Antwort in das Feld "Nachricht:" schreiben und auf "Senden" klicken.
 
 <strong>Eine Bitmessage Nachricht abspeichern:</strong>
 
