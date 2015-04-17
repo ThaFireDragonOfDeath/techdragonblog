@@ -228,8 +228,10 @@ Falls Sie Nachrichten von einer Adresse, welche schon in der Liste eingetragen i
 Falls Sie eine Adresse dauerhaft von der Liste entfernen wollen, öffnen Sie den Tab "Blacklist", klicken die zu entfernende Adresse mit der rechten Maustaste an und klicken Sie anschließend auf "Löschen".
 
 <strong>Eine Nachricht an eine Bitmessage Adresse senden:</strong>
-Wählen Sie den Tab "Senden" aus, wählen Sie darauf folgend eine Ihrer Identitäten hinter dem "Von:" aus, tragen Sie nun den Empfänger ein (falls Sie den Empfänger im Adressbuch gespeichert haben, navigieren Sie zu dem Adressbuch Tab, klicken Sie mit der Rechten Maustaste auf den Empfänger und anschließend auf "Nachricht an diese Adresse senden"). Tragen Sie nun den Betreff und die Nachricht ein. Klicken Sie zum Schluss auf "Senden":
+Wählen Sie den Tab "Senden" aus, wählen Sie darauf folgend eine Ihrer Identitäten hinter dem "Von:" aus, tragen Sie nun den Empfänger ein (falls Sie den Empfänger im Adressbuch gespeichert haben, navigieren Sie zu dem Adressbuch Tab, klicken Sie mit der Rechten Maustaste auf den Empfänger und anschließend auf "Nachricht an diese Adresse senden"). Tragen Sie nun den Betreff und die Nachricht ein. Klicken Sie zum Schluss auf "Senden".:
 <a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-10.png"><img class="alignnone size-medium wp-image-385" src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-10-300x207.png" alt="Screenshot-Bitmessage-10" width="300" height="207" /></a>
+
+Nachtrag: Bei der Git Version können Sie zudem einstellen, wie lange die Nachricht im Bitmessage Netzwerk verbleiben soll. Dazu finden Sie links neben dem "Senden" Button den Schieberegler für TTL (Time-To-Live). Über diesen können Sie den Wert anpassen. Je höher der Wert ist, desto mehr muss Ihr Computer auch berechnen.
 
 Im Tab "Gesendet" können Sie den Status nachverfolgen. Während die Nachricht versendet wird, steigt die Prozessorauslastung für einige Sekunden, eventuell auch Minuten, bis auf 100% an (im Test hat das weniger als eine halbe Minute gedauert). Die Nachricht wurde gesendet wenn im Status Feld steht "Message sent. Waiting for acknowledgement. Sent at [...]". Zu diesem Zeitpunkt wartet Bitmessage noch auf eine Empfangsbestätigung. Wenn dann folgendes steht "Acknowledgement of the message received, [...]" oder "Nachricht gesendet. gesendet am [...]" heißt das die Nachricht empfangen wurde.
 
@@ -237,13 +239,13 @@ Beim Empfänger sieht das im Posteingang dann folgendermaßen aus:
 <a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-11.png"><img class="alignnone size-medium wp-image-386" src="http://techdragonblog.square7.ch/wp-content/uploads/2015/03/Screenshot-Bitmessage-11-300x213.png" alt="Screenshot-Bitmessage-11" width="300" height="213" /></a>
 
 <strong>Eine Rundrufnachricht senden:</strong>
-Um eine Rundruf-Nachricht zu versenden, verfahren Sie wie beim Senden einer Person zu Person Nachricht, nur dass Sie dieses mal die Option "Rundruf an jeden, der Ihre Adresse abonniert hat" auswählen. Nach dem Sie die Nachricht abgeschickt haben, wird die dafür notwendige Arbeit verrichtet. Dies kann mehrere Minuten in Anspruch nehmen.
+Um eine Rundruf-Nachricht zu versenden, verfahren Sie wie beim Senden einer Person zu Person Nachricht, nur dass Sie dieses mal die Option "Rundruf an jeden, der Ihre Adresse abonniert hat" auswählen. Nach dem Sie die Nachricht abgeschickt haben, wird die dafür notwendige Arbeit verrichtet. Dies kann mehrere Minuten in Anspruch nehmen. Bei der Rundrufnachricht können Sie ebenfalls einstellen, wie lange die Nachricht im Netzwerk gespeichert bleiben soll (siehe vorherigen Abschnitt).
 
 <strong>Eine Bitmessage Nachricht lesen:</strong>
 Wenn eine neue Nachricht für Sie eintrifft werden Sie auch darüber über die Windows Benachrichtigung informiert. Um diese zu lesen müssen Sie nur das Bitmessage Fenster öffnen und den Tab "Posteingang" öffnen. Hier müssen Sie die Nachricht, die Sie lesen wollen anwählen. Diese wird dann im unteren Teil des Fensters angezeigt.
 
 <strong>Auf eine Bitmessage Nachricht antworten:</strong>
-Klicken Sie mit der rechten Maustaste im Tab "Posteingang" auf die Nachricht, auf die Sie antworten wollen und anschließend auf "Antworten". Nun befinden Sie sich im Tab "Senden", wo die Adresse des Empfängers und eine Kopie der ursprünglichen Nachricht bereits eingefügt wurden. Hier müssen Sie nur noch Ihre Antwort in das Feld "Nachricht:" schreiben und auf "Senden" klicken.
+Klicken Sie mit der rechten Maustaste im Tab "Posteingang" auf die Nachricht, auf die Sie antworten wollen und anschließend auf "Antworten". Nun befinden Sie sich im Tab "Senden", wo die Adresse des Empfängers und eine Kopie der ursprünglichen Nachricht bereits eingefügt wurden. Hier müssen Sie nur noch Ihre Antwort in das Feld "Nachricht:" schreiben und auf "Senden" klicken. Jenen, welche die Git Version benutzen können noch im Schieberegler, links neben den "Senden" Button einstellen, wie lange die Nachricht im Bitmessage P2P Netzwerk erhalten bleiben soll.
 
 <strong>Eine Bitmessage Nachricht abspeichern:</strong>
 Sie können eine Nachricht einfach abspeichern, dabei wird aber nur die reine Nachricht abgespeichert. Die Kopfinformationen, also von welcher Adresse die Nachricht kommt, oder wann diese eingetroffen ist, werden nicht mit abgespeichert.
