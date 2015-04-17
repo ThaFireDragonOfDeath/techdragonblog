@@ -33,7 +33,7 @@ Dienste in Verbindung mit Bitmessage
 - Auf eine Bitmessage Nachricht antworten
 - Eine Bitmessage Nachricht abspeichern
 - Eine Bitmessage Nachricht in den Papierkorb verschieben
-Eine Bitmessage Nachricht aus dem Papierkorb wiederherstellen
+- Eine Bitmessage Nachricht aus dem Papierkorb wiederherstellen
 - Den Papierkorb leeren
 - Zusammenfassendes Video von SemperVideo
 - Weiterführende Materialien und Quellen
@@ -250,9 +250,27 @@ Sie können eine Nachricht einfach abspeichern, dabei wird aber nur die reine Na
 Um eine Nachricht abzuspeichern, klicken Sie die zu speichernde Nachricht im Tab "Posteingang" mit der rechten Maustaste an und klicken Sie anschließend mit der linken Maustaste auf "Nachricht speichern unter...". Anschließend suchen Sie sich den Ort aus, wo die Text Datei schlussendlich gespeichert werden soll.
 
 <strong>Eine Bitmessage Nachricht in den Papierkorb verschieben:</strong>
-Eine Bitmessage Nachricht können Sie ganz einfach im Papierkorb verschieben. Öffnen Sie den Tab "Posteingang", klicken Sie die zu verschiebende Nachricht mit der rechten Maustaste an und klicken auf "In den Papierkorb verschieben".
+Eine Bitmessage Nachricht können Sie ganz einfach im Papierkorb verschieben. Öffnen Sie den Tab "Posteingang", klicken Sie die zu verschiebende Nachricht mit der rechten Maustaste an und klicken auf "In den Papierkorb verschieben". Sie sollten sich allerdings vorher genau überlegen, ob Sie die Nachricht in den Papierkorb verschieben wollen, da das wiederherstellen der Nachricht deutlich aufwendiger ist.
 
 <strong>Eine Bitmessage Nachricht aus dem Papierkorb wiederherstellen:</strong>
+Im Bitmessage Programm selbst gibt es keine Möglichkeit eine verschobene Nachricht wiederherzustellen. Wenn Sie dennoch eine Nachricht wiederherstellen wollen benötigen Sie ein SQLite Datenbanktool. Bevor Sie im folgenden mit einem externen Tool an der "messages.dat" Datei arbeiten, sollten Sie Bitmessage zuerst schließen. Für dieses Tutorial verwende ich das Tool <a href="http://sqlitebrowser.org/" target="_blank">Sqlitebrowser</a>, mit anderen Tools funktioniert das aber auch. Laden Sie sich nun ein SQLite Tool herunter und starten Sie dieses.
+Es sollte sich im Falle vom Sqlitebrowser in etwa folgendermaßen aussehen:
+<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/04/SQLiteBrowser-01.png"><img src="http://techdragonblog.square7.ch/wp-content/uploads/2015/04/SQLiteBrowser-01-300x204.png" alt="SQLiteBrowser-01" width="300" height="204" class="alignnone size-medium wp-image-445" /></a>
+
+Klicken Sie als nächstes auf "Open Database" (im vorherigen Bild grün markiert). Öffnen Sie im folgenden Fenster die Datei "messages.dat" (im folgenden Bild grün markiert):
+<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/04/SQLiteBrowser-02.png"><img src="http://techdragonblog.square7.ch/wp-content/uploads/2015/04/SQLiteBrowser-02-300x200.png" alt="SQLiteBrowser-02" width="300" height="200" class="alignnone size-medium wp-image-446" /></a>
+
+Nachdem Sie die Datenbank geöffnet haben sollten Sie sich noch im Tab "Database Structure" befinden. Öffnen Sie den Tab "Browse Data" (im folgenden Bild grün markiert). Danach müssen Sie die Tabelle "inbox" auswählen (im folgenden Bild blau markiert). Hier sehen Sie nun all Ihre Nachrichten, welche sich im Posteingang und im Papierkorb befinden. In der Spalte "folder" (das ist die siebte Spalte) können Sie sehen, ob diese Nachricht sich im Posteingang oder im Papierkorb befindet. Sie können auch einmal auf "folder" klicken um alle Objekte, die im Papierkorb sind zuerst anzuzeigen. In den Spalten "subject" und "message" sehen Sie den Betreff und den Inhalt der Nachricht. Um eine Nachricht wieder in den Posteingang zu verschieben klicken Sie in der Zeile, welche Ihre Nachricht enthält, in der Spalte "folder" doppelt auf "trash" (im folgenden Bild gelb markiert):
+<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/04/SQLiteBrowser-03.png"><img src="http://techdragonblog.square7.ch/wp-content/uploads/2015/04/SQLiteBrowser-03-300x204.png" alt="SQLiteBrowser-03" width="300" height="204" class="alignnone size-medium wp-image-447" /></a>
+
+Nun sollte folgendes Fenster erscheinen:
+<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/04/SQLiteBrowser-04.png"><img src="http://techdragonblog.square7.ch/wp-content/uploads/2015/04/SQLiteBrowser-04-300x209.png" alt="SQLiteBrowser-04" width="300" height="209" class="alignnone size-medium wp-image-449" /></a>
+
+Ersetzen Sie dort "trash" mit "inbox" und bestätigen Sie mit "OK".
+Nun sollte es wie im folgendem Bild aussehen (wo vorher "trash" stand sollte nun "inbox" stehen):
+<a href="http://techdragonblog.square7.ch/wp-content/uploads/2015/04/SQLiteBrowser-05.png"><img src="http://techdragonblog.square7.ch/wp-content/uploads/2015/04/SQLiteBrowser-05-300x204.png" alt="SQLiteBrowser-05" width="300" height="204" class="alignnone size-medium wp-image-451" /></a>
+
+Um die Änderungen schlussendlich zu übernehmen müssen Sie nur noch auf "Write Changes" klicken. Anschließend können Sie PyBitmessage wieder starten und die wiederhergestellte(n) Nachricht(en) sollten im Posteingang wieder zu sehen sein.
 
 <strong>Den Papierkorb leeren:</strong>
 Um die Nachrichten im Papierkorb endgültig zu entfernen klicken Sie auf "Datei" und anschließend auf "Alle Nachrichten im Papierkorb löschen".
