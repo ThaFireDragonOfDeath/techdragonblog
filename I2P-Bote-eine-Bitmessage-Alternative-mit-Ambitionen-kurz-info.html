@@ -1,0 +1,16 @@
+I2P-Bote, ein dezentrales, Ende zu Ende verschlüsseltes Mail-System, ähnlich Bitmessage (über Bitmessage habe ich bereits einen ausführlichen <a href="http://techdragonblog.square7.ch/bitmessage-die-e-mail-der-naechsten-generation/" target="_blank">Artikel</a> geschrieben). I2p bietet gegenüber Bitmessage aber mehrere Vorteile:
+- Nachrichten werden bis zu 100 Tage im Netzwerk gespeichert
+- Es existiert eine native (benötigt keine speziellen Server wie bei der Bitseal App), voll funktionsfähige Android App (Identitäten lassen sich importieren und exportieren).
+- I2P-Bote bietet mehrere Verschlüsselungs- Algorithmen an (aus denen sich dann auch die Länge der Bote Adressen ergibt) (<a href="https://de.wikipedia.org/wiki/Elgamal-Verschl%C3%BCsselungsverfahren" target="_blank">Elgamal</a> 2048-Bit; <a href="https://de.wikipedia.org/wiki/Elliptic_Curve_Cryptography" target="_blank">ECC (Elliptic Curve Cryptography)</a> 256-Bit; ECC 512-Bit und NTRU-1087 (<a href="https://de.wikipedia.org/wiki/NTRUEncrypt" target="_blank">NTRU</a> soll auch gegen Angriffe mittels Quantencomputern resistent sein, siehe <a href="https://de.wikipedia.org/wiki/Post-Quanten-Kryptographie" target="_blank">Post-Quanten-Kryptographie</a>)).
+- Als Backend wird das I2P verwendet, was ständig weiter entwickelt wird. Alles geschieht innerhalb des I2P-Netzes, wodurch die Sicherheit erhöht wird.
+- Es braucht Zeit (circa 5-10 Minuten), bis Nachrichten gesendet und empfangen werden können (hohe Latenz), wodurch Timing Angriffe erschwert werden.
+- Über das öffentliche Adressbuch lassen sich andere über den öffentlichen Namen (sofern derjenige seine Adresse in das Adressbuch veröffentlicht hat) finden. Dabei dauert das Suchen (und das Veröffentlichen) der Adresse circa 5-10 Minuten, wodurch ein massenhaftes Absuchen erschwert wird.
+- I2P-Bote ist und bleibt freie Software (<a href="https://de.wikipedia.org/wiki/GNU_General_Public_License" target="_blank">GPLv3</a>).
+
+Dafür müssen aber einige Nachteile hingenommen werden:
+- I2p-Bote bietet nicht die vielen Möglichkeiten wie Bitmessage (z.b. Rundrufnachrichten, Channels oder Webmailer im normalen Internet (Clearnet))
+- Das Abrufen und Senden der Nachrichten dauert 5-15 Minuten, wodurch I2P-Bote für Instant Messaging unbrauchbar ist.
+- Die Adressen sind sehr lang und unmöglich zu merken.
+- Man benötigt einen laufenden I2P Router um I2P Bote (sowohl in der Android, als auch in der PC Version) verwenden zu können (die Einrichtung kann normale Computernutzer überfordern).
+
+Bis vor kurzem (bis auf zur Version 0.2.x) war diese Software allerdings noch nicht empfehlenswert, da sich die Identitäten nur sehr schwer importieren und exportieren ließen. Mit Version 0.3 (erschienen am 15.08.2015) wurde dies nachgerüstet und mit Version 0.4 (erschienen am 21.08.2015) wurden die schlimmsten Bugs behoben (<a href="https://github.com/i2p/i2p.i2p-bote/blob/master/history.txt" target="_blank">siehe Versionslog</a>). Damit ist nun das Sichern und das Transferieren der Identität einfach möglich.
